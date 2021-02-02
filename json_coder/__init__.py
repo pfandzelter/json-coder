@@ -13,7 +13,6 @@ def normalize(fun):
         return fun(self, key, *args, **kwargs)
     return wrapper
 
-
 class ObjectRegister:
     _key_serializer_pairs = {}
     _key_deserializer_pairs = {}
