@@ -79,17 +79,14 @@ def _object_hook(dct):
 def jsonify_loads(s):
     return _json_loads(s, object_hook=_object_hook)
 
-
 def jsonify_load(s):
     return jsonify_loads(s.read())
 
+def jsonify_dumps(o,cls=ObjectEncoder):
+    return _json_dumps(o, cls)
 
-def jsonify_dumps(o):
-    return _json_dumps(o, cls=ObjectEncoder)
-
-
-def jsonify_dump(o, fp):
-    return _json_dump(o, fp, cls=ObjectEncoder)
+def jsonify_dump(o, fp, cls=ObjectEncoder):
+    return _json_dump(o, fp, cls)
 
 
 def find_init(cls):
